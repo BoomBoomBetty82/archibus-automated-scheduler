@@ -1,4 +1,4 @@
-name: Archibus-Automated-Scheduler
+name: Archibus-Automated-Scheduler-Albe
 
 on:
   workflow_dispatch:
