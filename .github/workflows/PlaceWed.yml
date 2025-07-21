@@ -1,0 +1,21 @@
+name: Archibus-Automated-Scheduler-Place
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "00 16 * * 2"  # 11:59 AM Eastern (EDT)
+
+
+
+jobs:
+  archibus-automated-scheduler:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Composite Action
+        uses: ./ # use ./ for local dev.
+        with:
+          scheduling_args: ${{ secrets.Orleans }} 
